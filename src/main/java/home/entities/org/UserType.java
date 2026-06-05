@@ -1,4 +1,4 @@
-package home.entities.emp;
+package home.entities.org;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.*;
