@@ -3,6 +3,7 @@ package home.rouserces;
 import home.dtos.CreateOrganizationDto;
 import home.services.OrganizationService;
 import jakarta.inject.Inject;
+import jakarta.transaction.Transactional;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
@@ -15,6 +16,7 @@ public class OrgResource {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
+    @Transactional
     public Response createOrganization(CreateOrganizationDto createOrganizationDto) {
         try {
             organizationService.createOrganization(createOrganizationDto);

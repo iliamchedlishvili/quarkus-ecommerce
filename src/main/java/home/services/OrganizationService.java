@@ -13,9 +13,6 @@ import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @RequestScoped
 public class OrganizationService {
     @Inject
@@ -38,9 +35,8 @@ public class OrganizationService {
         UserType userType = new UserType();
         userType.setId(1L);
         user.setUserType(userType);
-
-        //List<User> users = new ArrayList<>();
-        //users.add(user);
+        user.setFirstname(createUserDto.getFirstname());
+        user.setLastname(createUserDto.getLastname());
         organization.addUser(user);
         organizationRepository.persist(organization);
     }
